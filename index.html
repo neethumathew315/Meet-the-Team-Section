@@ -22,7 +22,112 @@
       }
 
       body {
-        height: 100vh;
+        font-family: sans-serif;
+        background-color: #fff;
+        color: #333;
+        line-height: 1.5;
+      }
+
+      .container{
+        max-width: 400px;
+        background-color: #ebecef;
+        display: grid;
+        padding: 1.5rem;
+        gap: 2rem;
+        border-radius: 24px;
+        margin: 2rem auto;
+        
+      }
+
+      .header-section{
+        background-image: url(resources/Background_decor.svg);
+        padding: 1rem;
+        background-repeat: no-repeat;
+      }
+
+      .header-section .label{
+        color: #6C63FF;
+        letter-spacing: 1px;
+        font-size: 0.78rem;
+      }
+
+      .header-section h1{
+        font-size: 1.8rem;
+        margin: 0.5rem 0;
+        padding-left: 0.3rem;
+      }
+
+      .header-section p{
+        font-size: 0.95rem;
+        color: #0e0e0e;
+      }
+
+      .team-grid{
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .member {
+        position: relative;
+        overflow: hidden;  
+      }
+
+      .member:nth-child(1){
+        background-color: #d5c9f5;
+      }
+      .member:nth-child(2){
+        background-color:  #f9cedf;
+      }
+      .member:nth-child(3){
+        background-color: #c5dfff;
+      }
+      .member:nth-child(4){
+        background-color: #fbe2c2;
+      }
+      .member:nth-child(5){
+        background-color: #b6e4dc;
+      }
+
+       .member img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .member-info {
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+        color: #fff;
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+      }
+
+      .member-info p {
+        font-size: 0.85rem;
+      }
+
+      .member-info h2 {
+        font-size: 1rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .more-members{
+        display: flex;
+        justify-content: flex-start;
+        padding-bottom: 2rem;
+      }
+
+      .more-members a{
+        text-decoration: none;
+        font-weight: 600;
+        color: #333;
+        display: inline-flex;
+        padding-left: 1.3rem;
+        gap: 0.4rem;
+      }
+
+      .more-members .arrow-icon {
+        padding: 0;
       }
 
       .author-info {
@@ -35,18 +140,130 @@
       .author-info a {
         text-decoration: none;
       }
+
+      @media(min-width: 768px) {
+
+        .container {
+          max-width: 1000px;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: repeat(3, 1fr);
+          gap: 0;
+          padding: 0;
+        }
+
+        .header-section{
+          grid-area: 1/1/2/3;
+          padding: 2rem;
+        }
+
+        .team-grid{
+          display: contents;
+        }
+
+        .header-section .label{
+          font-size: 1.2rem;
+        }
+
+        .header-section h1{
+          font-size: 2.8rem;
+        }
+
+        .header-section p{
+          font-size: 1.2rem;
+          line-height: 1.8rem;
+          letter-spacing: 0.03rem; 
+        }
+
+        .more-members{
+          grid-area: 3/1/4/2;
+          align-self: end;
+          justify-self: start;
+        }
+
+        .member:nth-child(1){
+          grid-area: 2/1/3/2;
+        }
+        .member:nth-child(2){
+          grid-area: 2/2/3/3;
+        }
+        .member:nth-child(3){
+          grid-area: 2/3/3/4;
+        }
+        .member:nth-child(4){
+          grid-area: 3/2/4/3;
+        }
+        .member:nth-child(5){
+          grid-area: 3/3/4/4;
+          border-bottom-right-radius: 24px;
+        }
+
+      }
+
+      @media(min-width: 1200px){
+
+        .container{
+          max-width: 1200px;
+          grid-template-columns: repeat(4, 1fr);
+          grid-template-rows: repeat(2, 1fr);
+        }
+
+        .team-grid {
+          display: contents;
+        }
+
+        .header-section h1{
+          font-size: 2.8rem;
+          padding: 0;
+        }
+
+        .header-section p{
+          font-size: 1.1rem;
+        }
+
+        .member:nth-child(1) {
+          grid-area: 1 / 3 / 2 / 4;
+        }
+
+        .member:nth-child(2) {
+          grid-area: 1 / 4 / 2 / 5;
+          border-top-right-radius: 24px;
+        }
+
+        .member:nth-child(3) {
+          grid-area: 2 /2 / 3 / 3;
+        }
+
+        .member:nth-child(4) {
+          grid-area: 2 / 3 / 3 / 4;
+        }
+
+        .member:nth-child(5) {
+          grid-area: 2 / 4 / 3 / 5;
+          border-bottom-right-radius: 24px;
+        }
+
+        .more-members {
+          grid-area: 2 / 1 / 3 / 2;
+          align-self: end;
+          padding-left: 1rem;
+        }
+
+      }
+
     </style>
   </head>
   <body>
 
     <main class="container" aria-label="Team introduction and members section">
+      
       <header class="header-section" aria-labelledby="team-heading">
         <p class="label">Our team</p>
         <h1 id="team-heading">Meet the brain</h1>
-        <p> We are proud to have them as part of our community and look forward to continuing to push the boundaries of what's possible in the world of digital art.</p>
+        <p class="description"> We are proud to have them as part of our community and look forward to continuing to push the boundaries of what's possible in the world of digital art.</p>
       </header>
 
-      <section class="article-section" aria-labelledby="members-heading">
+      <section class="team-grid" aria-labelledby="members-heading">
         <article class="member" aria-label="Liam Novak, Software Engineer">
           <img src="resources/person_1@2x.png" alt="Portrait of Liam Novak">
           <div class="member-info">
@@ -88,13 +305,14 @@
         </article>
       </section>
 
-      <footer class="footer-section" aria-label="Footer with see all members link">
-        <p>See all members</p>
+      <footer class="more-members" aria-label="Footer with see all members link">
+        <a href="#">See all members</a>
+        <a href="#" class="arrow-icon"><img src="resources/arrow up right.svg" alt="Go to team page"></a> 
       </footer>
     </main>
 
     <div class="author-info">
-      Coded by <a href="#">Your Name Here</a> | Challenge by
+      Coded by <a href="#">Neethu Mathew</a> | Challenge by
       <a href="https://www.devchallenges.io?ref=challenge" target="_blank"
         >devChallenges.io</a
       >.
